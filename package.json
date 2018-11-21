@@ -1,0 +1,27 @@
+{
+  "name": "librejs-license-banner",
+  "version": "1.0.0",
+  "description": "Given a license identifer, format a librejs-compatible @licence string",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FloatingGhost/librejs-license-banner.git"
+  },
+  "keywords": [
+    "librejs",
+    "GNU",
+    "license"
+  ],
+  "author": "Hannah Ward <hannah@coffee-and-dreams.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FloatingGhost/librejs-license-banner/issues"
+  },
+  "homepage": "https://github.com/FloatingGhost/librejs-license-banner#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
