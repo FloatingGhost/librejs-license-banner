@@ -86,3 +86,5 @@ const getLicenseBanner = (
 };
 
 export default getLicenseBanner;
+
+// @license-end
