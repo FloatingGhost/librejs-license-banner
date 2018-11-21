@@ -1,6 +1,6 @@
 {
   "name": "librejs-license-banner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Given a license identifer, format a librejs-compatible @licence string",
   "main": "index.js",
   "scripts": {
