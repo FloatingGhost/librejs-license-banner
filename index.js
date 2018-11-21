@@ -47,18 +47,37 @@ const licenseAliases = {
 
 /**
  * @param {string} identifier The licence to get the banner for
+ * @param {object} options A set of behaviour-altering switches
+ *   @param {boolean} options.failOnNonexistent Raise an error if
+ *                    a non-existent license is requested
+ *   @param {boolean} options.quiet do not alert about aliases/nonexistent
+ *                    licenses
  */
-const getLicenseBanner = (identifier) => {
+const getLicenseBanner = (
+    identifier, 
+    { failOnNonexistent = false, quiet = false } = {}) => {
+
     let licenseHash;
     if (magnetMap[identifier]) {
         // The licence exists in our standard map
         licenseHash = magnetMap[identifier];
     } else if (licenseAliases[identifier]) {
+        // License exists in our alias map, warn the user and use it
         const dealiased = licenseAliases[identifier];
-        console.warn(`License ${identifier} is not part of the standard ` +
-                     `license set, assuming you mean ${dealiased}`);
+
+        if (!quiet) {
+            console.warn(`License ${identifier} is not part of the standard ` +
+                         `license set, assuming you mean ${dealiased}`);
+        }
+
         licenseHash = magnetMap[dealiased];
+        identifier = dealiased;
+
     } else {
+        if (failOnNonexistent) {
+            throw `Licence ${identifier} not found!`;
+        }
+
         console.error(`Licence ${identifier} not found!`);
         licenseHash = "unknown";
     }

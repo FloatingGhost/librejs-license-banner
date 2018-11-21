@@ -4,7 +4,7 @@
   "description": "Given a license identifer, format a librejs-compatible @licence string",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/FloatingGhost/librejs-license-banner#readme",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1"
   }
 }
